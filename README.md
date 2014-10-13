@@ -1,6 +1,6 @@
 Project Boiler Plate for UWyo COSC 4950/5
 =========================================
-
+Testing github 
 This is nothing more than a directory structure to use for starting a new project.  
 It contains the following folders:
 

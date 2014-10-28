@@ -1,0 +1,93 @@
+=================================================================
+=                     TABLE ACCESS INFORMATION                  =
+=================================================================
+
+//include the java.sql library
+
+Class.forName("com.mysql.jdbc.Driver").newInstance();
+Connection connection = DriverManager.getConnection(
+                        "jdbc:mysql://cobi.cs.uwyo.edu/",
+                        "user","password");
+Statement statement   = connection.createStatement();
+ResultSet result = statement.executeQuery(
+     "SELECT * FROM sometable WHERE id = 1");
+
+
+
+=================================================================
+=                    TABLE CREATION INFORMATION                 =
+=                     October 28, 2014: 14:22                   =
+=================================================================
+
+CREATE TABLE globus.Calendar
+    -> (
+    -> cal_id int,
+    -> group_id int
+    -> );
+
+CREATE TABLE globus.Events
+    -> (
+    -> cal_id int,
+    -> event_id int,
+    -> time_start bigint,
+    -> time_end bigint,
+    -> name VARCHAR(255),
+    -> description VARCHAR(1000)
+    -> );
+
+CREATE TABLE globus.EventMembers
+    -> (
+    -> cal_id int,
+    -> event_id int,
+    -> user_id int,
+    -> permissions ENUM('Attendee','Organizer','Administrator','Creator')
+    -> );
+
+CREATE TABLE globus.Users
+    -> (
+    -> user_id INT,
+    -> name VARCHAR(255),
+    -> email VARCHAR(255),
+    -> password VARCHAR(255),
+    -> biography VARCHAR(2500),
+    -> last_update BIGINT
+    -> );
+
+CREATE TABLE globus.GroupMembers
+    -> (
+    -> group_id INT,
+    -> user_id INT
+    -> );
+
+CREATE TABLE globus.Messages
+    -> (
+    -> group_id INT,
+    -> message_id INT,
+    -> type ENUM('Announcement','Broadcast','Emergency','Normal'),
+    -> contents VARCHAR(2500)
+    -> );
+
+CREATE TABLE globus.Groups
+    -> (
+    -> group_id INT,
+    -> group_name VARCHAR(255),
+    -> creator INT,
+    -> description VARCHAR(2500),
+    -> password VARCHAR(255),
+    -> google_username VARCHAR(255),
+    -> google_password VARCHAR(255)
+    -> );
+
+SHOW TABLES FROM globus;
++------------------+
+| Tables_in_globus |
++------------------+
+| Calendar         |
+| EventMembers     |
+| Events           |
+| GroupMembers     |
+| Groups           |
+| Messages         |
+| Users            |
++------------------+
+7 rows in set (0.01 sec)

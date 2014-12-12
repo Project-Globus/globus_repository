@@ -1,0 +1,71 @@
+#Use Cases
+
+##Use Case: Sigma Nu Fraternity
+
+###CHARACTERISTIC INFORMATION
+
+**Goal in Context:** The fraternity uses Project Globus to comunicate through multiple groups, manage members and events.
+
+**Scope:** Sigma Nu Fraternity
+
+**Level:** Summary
+
+**Preconditions:** Sigma Nu Fraternity's members have access to one of Android, iOS, or web application.
+
+**Success End Condition:** Sigma Nu will have a single tool that can provide effective inter-member communication, maintain calendars and events, as well as member participation.  
+
+**Failed End Condition:** Sigma Nu will remain to using multiple applications under varied interfaces in order to maintain chapter operations inefficiently.
+
+**Primary Actor:** All members, with particular use by chapter officers.
+
+**Trigger:** Sigma Nu Fraternity is chartered, or fraternity emmbership changes.
+
+###MAIN SUCCESS SCENARIO
+
+1. Sigma Nu Fraternity is chartered.
+
+2. Chapter Commander creates a group for the chapter.
+
+3. Members are invited to join (or join via password method) and are assigned roles and privilege levels by Commander.
+
+4. Members use communication tool provided by Project Globus using the project's wide array of message types, importance levels and notifications.
+
+5. Members use the project's calendar and scheduling tools to maintain chapter events and accurately record event leadership and particpation.
+
+###EXTENSIONS
+
+2. a. The user must register with our software and create a group.
+
+3. a. Members must register with our software and be invited or join the group.
+
+###SUB-VARIATIONS
+
+2. a. Registration with our software can be done on all published platforms: Android, iOS, web.
+
+3. a. Registration with our software can be done on all published platforms: Android, iOS, web.
+
+4. a. Interaction with our software can be done on all published platforms: Android, iOS, web.
+
+5. a. Interaction with our software can be done on all published platforms: Android, iOS, web.
+
+
+###RELATED INFORMATION (optional)
+
+**Priority:** Moderate
+
+**Performance Target:** Minimal, in conjunction with AKP Use Case.
+
+**Frequency:** Many times, daily.
+
+**Channel to primary actor:** Interactive Android, iOS and web applications.
+
+
+###OPEN ISSUES (optional)
+
+1. Custom design options.
+
+2. File sharing extensibility (use of and possible editing of shared files).
+
+###SCHEDULE
+
+**Due Date:** Release 1.0, January 1, 2015.

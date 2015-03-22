@@ -1,0 +1,12 @@
+1) So, to start off, delete the "Library" project from your workspace. We will be re-importing this the correct way so that eclipse can use it properly.
+
+2) Now you want to import a new project to your workspace. When selecting what type of file to import, go to the Android subfolder and select "Existing Android Code Into Workspace"
+
+3) On the next screen, you want to select the "CaldroidProject" folder located in the Android Project Files folder of our repository.
+	- The location for this on my computer was C:\Users\super_000\Documents\GitHub\globus_repository\Documents\GlobusAndroidAppFiles\CaldroidProject
+
+4) With this, eclipse should be able to find the two included projects, Library and CladroidSampleActivity. You need to import libary, but you don't have to import the other if you don't want to.
+
+5) After that is imported, you need to re configure the build path for Globus. To do this, Right click Globus and then go to BuildPath -> ConfigureBuildPath.
+
+6) From the new screen that pops up, click on Android in the window on the left and then at the bottom of the screen, inside the library window, you will see the reference to the Library project. Remove this reference and re add it, and you should be set.

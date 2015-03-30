@@ -33,9 +33,9 @@ public class PGDB {
 		// Initialize the connection driver.
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			statusLog = "<HTML>PGDB: MySQL Driver successfully initialized.<BR>";
+			statusLog = "PGDB: MySQL Driver successfully initialized.\n";
 		} catch (Exception ex) {
-			statusLog = "<HTML>PGDB: ERROR - MySQL Driver failed to initialize.<BR>";
+			statusLog = "PGDB: ERROR - MySQL Driver failed to initialize.\n";
         }
 		
 		// Create Connection to database.
@@ -45,18 +45,18 @@ public class PGDB {
                     "jdbc:mysql://" + hostname + ":" + port + "/" + database ,
                     user, password);
 			
-			statusLog += "PGDB: Connection to Database established.<BR>";
+			statusLog += "PGDB: Connection to Database established.\n";
 			
 			// Mark PGDB as initialized.
 			INIT = true;
 		} catch (SQLException ex){
 			statusLog += "PGDB: ERROR - SQL EXCEPTION" +
-					 "<BR>SQLException: " + ex.getMessage() +
-					 "<BR>SQLState: " + ex.getSQLState() +
-					 "<BR>VendorError: " + ex.getErrorCode();
+					 "\nSQLException: " + ex.getMessage() +
+					 "\nSQLState: " + ex.getSQLState() +
+					 "\nVendorError: " + ex.getErrorCode();
 		}
 		
-		return statusLog + "</HTML>";
+		return statusLog + "";
 	}
 
 	// Sends the final message, does not handle return object queries
@@ -232,9 +232,9 @@ public class PGDB {
 				result[4] = rs.getString(4);
 				result[5] = rs.getString(5);
 				result[6] = rs.getString(6);
-				result[0] = "Login Successful! Welcome " + result[1];
+				result[0] = "Login Successful! Welcome " + result[1] + ".";
 				
-				result[0] += ". Attempting Authentication: " + (authenticate(result) ? "success" : "failed");
+				//result[0] += ". Attempting Authentication: " + (authenticate(result) ? "success" : "failed");
 			}
 		} catch (SQLException e1) {
 				result[0] = e1.getMessage();
@@ -260,7 +260,7 @@ public class PGDB {
 		result.add(row);
 		
 		try {
-			ResultSet rs = sendQuery("SELECT group_name,group_id,password,description,creator,google_username,google_password FROM globus.Groups WHERE creator = '" + userInfo[2] + "'");
+			ResultSet rs = sendQuery("SELECT group_name,group_id,password,description,creator,google_username,google_password FROM globus.Groups, globus.GroupMembers WHERE where Groups.group_id=GroupMembers.group_id and GroupMembers.user_id = '" + userInfo[2] + "'");
 			if (!rs.first()){
 				row.add("ERROR RETRIEVING INFORMATION FROM TABLE");
 				result.add(row);
@@ -279,7 +279,7 @@ public class PGDB {
 					rs.next();
 				}
 				for (int i = 1; i < result.size(); ++i)
-					result.get(0).add("Group Created! You are the creator for groups "+result.get(i).get(1));
+					result.get(0).add("You are the creator for groups "+result.get(i).get(1));
 			}
 		} catch (SQLException e1) {
 			result.get(0).add(e1.getMessage());
@@ -385,6 +385,8 @@ public class PGDB {
 		} catch (SQLException e1) {
 			groups.get(0).add(e1.getMessage());
 		}
+		
+		groups = getMembership(userInfo);
 		
 		groups.get(0).add(sendMessage("INSERT INTO globus.GroupMembers (group_id,user_id) VALUES ('" + 
 				grpID + "','" + 

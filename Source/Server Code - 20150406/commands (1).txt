@@ -1,0 +1,10 @@
+updateDesc - Group Description
+        - Group Password, admin only
+        - Individual Password
+        - Group Name, admin only
+        - Google Username and password, admin only
+        - Biography
+        - Personal Name
+        - getMembership from 
+        
+ Update EventMembers table for true/false attendance.

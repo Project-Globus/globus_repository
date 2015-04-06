@@ -1,0 +1,99 @@
+mysql> USE globus;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> SHOW TABLES;
++------------------+
+| Tables_in_globus |
++------------------+
+| Calendar         |
+| EventMembers     |
+| Events           |
+| GroupMembers     |
+| Groups           |
+| Messages         |
+| Users            |
++------------------+
+7 rows in set (0.01 sec)
+
+mysql> DESCRIBE Calendar;
++----------+---------+------+-----+---------+----------------+
+| Field    | Type    | Null | Key | Default | Extra          |
++----------+---------+------+-----+---------+----------------+
+| cal_id   | int(11) | NO   | PRI | NULL    | auto_increment |
+| group_id | int(11) | YES  | MUL | NULL    |                |
++----------+---------+------+-----+---------+----------------+
+2 rows in set (0.00 sec)
+
+mysql> DESCRIBE EventMembers;
++-------------+--------------------------------------------------------+------+-----+---------+-------+
+| Field       | Type                                                   | Null | Key | Default | Extra |
++-------------+--------------------------------------------------------+------+-----+---------+-------+
+| cal_id      | int(11)                                                | YES  | MUL | NULL    |       |
+| event_id    | int(11)                                                | YES  | MUL | NULL    |       |
+| user_id     | int(11)                                                | YES  | MUL | NULL    |       |
+| permissions | enum('Attendee','Organizer','Administrator','Creator') | YES  |     | NULL    |       |
++-------------+--------------------------------------------------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> Describe Events;
++-------------+---------------+------+-----+---------+----------------+
+| Field       | Type          | Null | Key | Default | Extra          |
++-------------+---------------+------+-----+---------+----------------+
+| cal_id      | int(11)       | YES  | MUL | NULL    |                |
+| event_id    | int(11)       | NO   | PRI | NULL    | auto_increment |
+| time_start  | bigint(20)    | YES  |     | NULL    |                |
+| time_end    | bigint(20)    | YES  |     | NULL    |                |
+| name        | varchar(255)  | YES  |     | NULL    |                |
+| description | varchar(2500) | YES  |     | NULL    |                |
++-------------+---------------+------+-----+---------+----------------+
+6 rows in set (0.00 sec)
+
+mysql> Describe GroupMembers;
++----------+---------+------+-----+---------+-------+
+| Field    | Type    | Null | Key | Default | Extra |
++----------+---------+------+-----+---------+-------+
+| group_id | int(11) | YES  | MUL | NULL    |       |
+| user_id  | int(11) | YES  | MUL | NULL    |       |
++----------+---------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> Describe Groups;
++-----------------+---------------+------+-----+---------+----------------+
+| Field           | Type          | Null | Key | Default | Extra          |
++-----------------+---------------+------+-----+---------+----------------+
+| group_id        | int(11)       | NO   | PRI | NULL    | auto_increment |
+| group_name      | varchar(255)  | YES  |     | NULL    |                |
+| creator         | int(11)       | YES  |     | NULL    |                |
+| description     | varchar(2500) | YES  |     | NULL    |                |
+| password        | varchar(255)  | YES  |     | NULL    |                |
+| google_username | varchar(255)  | YES  |     | NULL    |                |
+| google_password | varchar(255)  | YES  |     | NULL    |                |
++-----------------+---------------+------+-----+---------+----------------+
+7 rows in set (0.01 sec)
+
+mysql> Describe Messages;
++------------+-------------------------------------------------------+------+-----+---------+----------------+
+| Field      | Type                                                  | Null | Key | Default | Extra          |
++------------+-------------------------------------------------------+------+-----+---------+----------------+
+| message_id | int(11)                                               | NO   | PRI | NULL    | auto_increment |
+| group_id   | int(11)                                               | YES  | MUL | NULL    |                |
+| type       | enum('Announcement','Broadcast','Emergency','Normal') | YES  |     | NULL    |                |
+| contents   | varchar(2500)                                         | YES  |     | NULL    |                |
+| timestamp  | timestamp                                             | YES  |     | NULL    |                |
++------------+-------------------------------------------------------+------+-----+---------+----------------+
+5 rows in set (0.02 sec)
+
+mysql> Describe Users;
++-------------+---------------+------+-----+---------+----------------+
+| Field       | Type          | Null | Key | Default | Extra          |
++-------------+---------------+------+-----+---------+----------------+
+| user_id     | int(11)       | NO   | PRI | NULL    | auto_increment |
+| name        | varchar(255)  | YES  |     | NULL    |                |
+| email       | varchar(255)  | YES  |     | NULL    |                |
+| password    | varchar(255)  | YES  |     | NULL    |                |
+| biography   | varchar(2500) | YES  |     | NULL    |                |
+| last_update | int(11)       | YES  |     | NULL    |                |
++-------------+---------------+------+-----+---------+----------------+
+6 rows in set (0.00 sec)

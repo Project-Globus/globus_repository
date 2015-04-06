@@ -1,0 +1,10 @@
+DONE    - Group Description, admin only
+DONE        - Group Password, admin only
+DONE        - GroupName, admin only,
+        - Google Username and password, admin only,
+DONE        - Biography
+DONE        - Individual password
+DONE        - Personal name
+DONE        - getMembership
+        
+DONE: Update EventMembers table for true/false attendace.

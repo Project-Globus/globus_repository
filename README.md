@@ -6,12 +6,11 @@ Project Globus
 * Jesse Miller
 * Taylor Olson
 
-* **Source:** This is where you should place all of your source code.  If your project
-  uses multiple languages, you may find it useful to have subdirectories, e.g.,
-  Source/java, Source/html, Source/images, etc.  If you are using an IDE that has
-  a project directory, you may wish to start the project here.  For example, the
-  Source directory could contain an Xcode project repository or a VisualStudio
-  project.
+* **Source:** The Source folder contains two subdirectories: "GlobusAndroidAppFiles" and "Server". 
+
+"GlobusAndroidAppFiles" contains all of the code, through its multiple revisions, of the android application source code. Please read ANDROID_README.md for a walkthrough of those materials.
+
+"Server" contains all of the server-side code, including the database interaction library, through its multiple revisions, of the code used by our server. Please read SERVER_README.md for a walkthrough of those materials.
 
 * **Documents:** Here will be the documents you write to describe your project.  The
   boiler plate includes a use case template and a sample use case.  Both of these
@@ -22,18 +21,11 @@ Project Globus
   software company.  That is a good example of what a requirements document for this
   class should look like.
 
-* **Resources:** This is where you can place files that are useful to your project.
-  For example, you may place here helpful articles downloaded from the internet.
+* **Resources:** This folder contains Jim Ward's Android support library, which was used during the development of the android application.
 
-TODO:
+**Project Globus**
 
 * A brief description (paragraph or two) of your project
 
-This file should also give me a good description of the files and folders that you want 
-me to look for grading purposes.  For example, if your code is in Java, you may describe 
-the most important Java packages and the order in which I should view them to understand 
-your code.  I will probably take a look at everything that is in the repository, but your
-guidance will make it easier for me to navigate the project.
-  
-[1]: http://alistair.cockburn.us/Basic+use+case+template "Alistair Cockburn on Use Cases"
-[2]: http://daringfireball.net/projects/markdown/ "Markdown Documentation"
+Project Globus is a group management mobile application, written for Android systems. 
+The application is designed to work with a variety of groups, both casual and professional. Project Globus’ targeted audience includes students working on a school project, fraternities managing philanthropic events and business teams working on their next biggest products by providing an innovative, simplistic and versatile experience to keep the group organized. Project Globus creates the experience via access to a remote server using a customized database to manage users, groups and other Globus services.  The services that Project Globus provides include access to file sharing, a group calendar, and group messaging.

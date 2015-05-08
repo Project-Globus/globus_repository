@@ -12,17 +12,9 @@ YYYY = Four digit year, MM = Two digit month, DD = Two digit day, HH = Two digit
 time cycle), mm = Two digit minute. So for example, if someone were to submit revisions on May 6
 at 8:13 pm, the name of the file would be “ProjectGlobus_20150506_2013.zip”
 
-* **Documents:** Project Globus is a group management mobile application, written for Android systems. 
-The application is designed to work with a variety of groups, both casual and professional. Project Globus’ 
-targeted audience includes students working on a school project, fraternities managing philanthropic 
-events and business teams working on their next biggest products by providing an innovative, simplistic 
-and versatile experience to keep the group organized. Project Globus creates the experience via access 
-to a remote server using a customized database to manage users, groups and other Globus services.  The 
-services that Project Globus provides include access to file sharing, a group calendar, and group messaging.
-
 * **Resources:** Caldroid, Jim Ward’s Mobile Programming Repository
 
-TODO:
+**Walkthrough**
 
 These instructions are under the assumption that Eclipse is set up with the Android SDK as found with
 the instructions from this website: http://developer.android.com/sdk/installing/installing-adt.html

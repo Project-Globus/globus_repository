@@ -6,7 +6,7 @@ Project Globus
 * Jesse Miller
 * Taylor Olson
 
-* **Source:** The source code for the Android software is located in the “Documents” folder
+* **Source:** The source code for the Android software is located in the “Source” folder
 under “GlobusAndroidAppFiles”. The file naming system consists of “ProjectGlobus_YYYYMMDD_HHmm”
 YYYY = Four digit year, MM = Two digit month, DD = Two digit day, HH = Two digit hour (24 hour
 time cycle), mm = Two digit minute. So for example, if someone were to submit revisions on May 6
@@ -14,7 +14,7 @@ at 8:13 pm, the name of the file would be “ProjectGlobus_20150506_2013.zip”
 
 * **Documents:** Project Globus is a group management mobile application, written for Android systems. 
 The application is designed to work with a variety of groups, both casual and professional. Project Globus’ 
-targeted audience includes student’s working on a school project, fraternities managing philanthropic 
+targeted audience includes students working on a school project, fraternities managing philanthropic 
 events and business teams working on their next biggest products by providing an innovative, simplistic 
 and versatile experience to keep the group organized. Project Globus creates the experience via access 
 to a remote server using a customized database to manage users, groups and other Globus services.  The 

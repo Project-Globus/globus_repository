@@ -1,0 +1,6 @@
+October 15, 2014 - Start Android App Development
+November 1, 2014 - Have server/database running
+January 1, 2015 - Complete Android App
+February 1, 2015 - Complete iOS App
+March 1, 2015 - Complete Website Interface
+April 1, 2015 - Presentation Completed
